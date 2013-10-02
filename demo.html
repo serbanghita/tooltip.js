@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Tooltip test</title>
+  <style type="text/css">body,div,p { font-family: Verdana; font-size:12px; }</style>
+  <script type="text/javascript">
+  /*
+    if (!Function.prototype.bind) {
+      Function.prototype.bind = function (oThis) {
+        if (typeof this !== "function") {
+          // closest thing possible to the ECMAScript 5 internal IsCallable function
+          throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+        }
+
+        var aArgs = Array.prototype.slice.call(arguments, 1),
+            fToBind = this,
+            fNOP = function () {},
+            fBound = function () {
+              return fToBind.apply(this instanceof fNOP && oThis
+                                     ? this
+                                     : oThis,
+                                   aArgs.concat(Array.prototype.slice.call(arguments)));
+            };
+
+        fNOP.prototype = this.prototype;
+        fBound.prototype = new fNOP();
+
+        return fBound;
+      };
+    }
+    */
+  </script>
+  <script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body>
+
+  <div>
+<p>Proin ultrices elit in velit sodales, ac luctus eros fermentum. In a arcu vitae lorem blandit suscipit. <span id="tooltip_1" style="text-decoration:underline;">Maecenas</span> tempus condimentum lorem quis dignissim. Nunc auctor non arcu vel suscipit. Ut viverra purus ac odio auctor facilisis. <a href="#" id="tooltip_2">Proin</a> tortor lorem, accumsan nec pharetra ut, pellentesque eu nulla. Morbi tristique, velit et egestas rutrum, urna augue mattis eros, vitae ullamcorper massa neque at est. Mauris luctus ante non purus pellentesque sodales. Curabitur eu arcu nibh. In hac habitasse platea dictumst. Etiam auctor ligula mollis, consequat neque a, commodo <a href="#" id="tooltip_3">ligula</a>.</p>
+
+<p>Vivamus et purus rhoncus, sagittis justo id, aliquam velit. Nunc sit amet est eget elit pellentesque aliquet a a velit. In vel lectus ac quam sollicitudin feugiat eget sed elit. Duis enim elit, auctor ut lectus non, blandit rutrum nisl. Nulla sapien diam, cursus non orci sed, sodales scelerisque dui. In neque nunc, semper eu ligula eu, congue luctus ipsum. Morbi porta, orci a mollis placerat, mauris justo mollis mauris, a vulputate libero mauris sed tortor. Nulla tristique, quam et varius porttitor, lacus massa blandit augue, eu convallis felis tortor a ante. Maecenas aliquet, magna commodo iaculis faucibus, ligula nisl congue purus, et pretium justo tortor vel leo. Integer non blandit arcu. Mauris erat tellus, blandit et blandit a, fermentum pretium est. Donec gravida felis nec nisi mattis molestie.</p>
+
+  </div>
+
+  <div id="tooltip_content_3" style="border:1px solid black; padding:2px; background-color:white; display:none;">Like the third baws</div>
+
+  <script type="text/javascript">
+
+    new tooltip({
+      elem: document.getElementById('tooltip_1'),
+      content: '<div style="border:1px solid black; padding:2px; background-color:white;">Like the first baws</div>'
+    });
+
+    new tooltip({
+      elem: document.getElementById('tooltip_2'),
+      content: '<div style="border:1px dotted black; background-color:white; width:96px;"><img src="http://ghita.org/ux/slideshow/demo/test-slide1.png"><span>Serban Ghita</span></div>'
+    });
+
+    new tooltip({
+      elem: document.getElementById('tooltip_3'),
+      content: document.getElementById('tooltip_content_3')
+    });
+
+  </script>
+
+
+
+
+</body>
+</html>
