@@ -42,7 +42,7 @@ new tooltip({
 
 ##### Screenshots
 
-<img src="http://ghita.org/sites/default/files/articles_imgs/tooltip.gif" border="0">
+<img src="http://assets.ghita.org/projects/tooltip.js.gif" border="0">
 
 ##### Contribute
 
